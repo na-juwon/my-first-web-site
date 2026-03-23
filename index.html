@@ -1,20 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>WEB1 - Welcome</title> 
-    <meta charset="utf-8">
-</head>
-<body>
-    <h1><a href="index.html">WEB</a></h1>
-<ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html">JavaScript</a></li>
-</ol>
-<h2>WEB이란 무엇인가</h2>
-<p>월드 와이드 웹(World Wide Web)이란 인터넷에 연결된 사용자들이 서로의 정보를 공유할 수 있는 공간을 의미합니다.
-간단히 줄여서 WWW나 W3라고도 부르며, 간단히 웹(Web)이라고 가장 많이 불립니다.
-인터넷과 같은 의미로 많이 사용되고 있지만, 정확히 말해 웹은 인터넷상의 인기 있는 하나의 서비스일 뿐입니다.
-</p>
-</body>
+    <head>
+        <title>web</title>
+    </head>
+
+    <body>
+        <h1>login</h1>
+        <p>username
+            <input type="text" maxlength='8'>
+        </p>
+        <p>password
+            <input type="text">
+            </p>
+        <input type ="submit" value="login">
+        <h2>Creat Account</h2>
+        <form action ="C:\Users\서주원\Desktop\practice\1.html" method ="get">
+            <label for="username"></label>
+        <p>username
+            <input type="text" name="username" maxlength='8' >
+            
+        </p>
+        <p>password
+            <input type="password"
+            placeholder="Password" 
+            name="password" 
+            id="password"
+            pattern= "(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}"
+            oninvalid="this.setCustomValidity('The password length must be 8 to 16 characters and must include at least one character, number, or special character, regardless of case.');"
+            oninput="this.setCustomValidity(''); validatePassword();"
+            required
+        />
+            <input type="password" 
+            placeholder="Confirm Password" 
+            id="confirm_password" 
+            oninput="validatePassword();"
+            required>
+            <button type="submit" class="pure-button pure-button-primary">Confirm</button>
+        </p>
+
+        <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+            if (password != confirm_password) {
+                document.getElementById("confirm_password").setCustomValidity("Passwords do not match.");
+            } else {
+                document.getElementById("confirm_password").setCustomValidity("");
+            }
+        }
+        </script>
+        </p>
+        <input type="submit" value="Creat Account">
+        </form>
+    </body>
 </html>
